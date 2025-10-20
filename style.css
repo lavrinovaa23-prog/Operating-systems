@@ -5,55 +5,51 @@
 }
 
 :root {
-    --primary-yellow: #ffd700;
-    --secondary-yellow: #ffed4e;
-    --dark-yellow: #d4af37;
-    --light-yellow: #fffdf0;
-    --accent-yellow: #ffec8b;
-    --text-dark: #333;
-    --text-light: #666;
-    --white: #ffffff;
-    --shadow: rgba(255, 215, 0, 0.2);
+    --primary-dark: #1a365d;
+    --secondary-dark: #2d3748;
+    --accent-dark: #4a5568;
+    --text-light: #e2e8f0;
+    --text-lighter: #a0aec0;
+    --background-dark: #0f1419;
+    --card-dark: #1e293b;
+    --border-dark: #374151;
+    --hover-dark: #2d3748;
+    --shadow-dark: rgba(0, 0, 0, 0.3);
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: var(--text-dark);
-    background-color: var(--light-yellow);
+    color: var(--text-light);
+    background: linear-gradient(135deg, var(--background-dark) 0%, var(--primary-dark) 100%);
     min-height: 100vh;
     font-size: 15px;
 }
 
 .container {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 2rem;
 }
 
 /* Header */
 header {
-    background: linear-gradient(135deg, var(--primary-yellow), var(--secondary-yellow));
-    color: var(--text-dark);
+    background: var(--primary-dark);
+    color: var(--text-light);
     padding: 2rem 0;
     text-align: center;
-    box-shadow: 0 4px 15px var(--shadow);
-    border-bottom: 3px solid var(--dark-yellow);
-    grid-column: 1 / -1;
+    border-bottom: 1px solid var(--border-dark);
 }
 
 header h1 {
     font-size: 2.2rem;
     margin-bottom: 0.8rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    font-weight: 600;
 }
 
 header p {
     font-size: 1.1rem;
-    opacity: 0.9;
+    color: var(--text-lighter);
     max-width: 600px;
     margin: 0 auto;
 }
@@ -61,35 +57,111 @@ header p {
 /* Main content */
 main {
     padding: 2rem 0;
-    grid-column: 1 / -1;
+}
+
+/* Welcome section */
+.welcome-section {
+    background: var(--card-dark);
+    border: 1px solid var(--border-dark);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px var(--shadow-dark);
+}
+
+.welcome-section h2 {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    border-bottom: 2px solid var(--accent-dark);
+    padding-bottom: 0.5rem;
+}
+
+.welcome-section p {
+    color: var(--text-lighter);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+/* Content grid */
+.content-grid {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: 2rem;
 }
 
-/* Sidebar - Лекции в столбик */
-.lectures-sidebar {
-    background: var(--white);
-    border-radius: 10px;
-    box-shadow: 0 4px 15px var(--shadow);
-    border: 2px solid var(--primary-yellow);
-    padding: 1.5rem;
-    height: fit-content;
-    position: sticky;
-    top: 2rem;
+/* Main content */
+.main-content {
+    background: var(--card-dark);
+    border: 1px solid var(--border-dark);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px var(--shadow-dark);
 }
 
-.lectures-sidebar h2 {
-    color: var(--dark-yellow);
+.main-content h2 {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--accent-dark);
+    padding-bottom: 0.5rem;
+}
+
+/* Info blocks */
+.info-block {
+    margin-bottom: 2rem;
+}
+
+.info-block h3 {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.info-block ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.info-block li {
+    color: var(--text-lighter);
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.info-block li::before {
+    content: '•';
+    color: var(--accent-dark);
+    font-weight: bold;
+    position: absolute;
+    left: 0.5rem;
+}
+
+/* Sidebar */
+.sidebar {
+    background: var(--card-dark);
+    border: 1px solid var(--border-dark);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px var(--shadow-dark);
+    height: fit-content;
+}
+
+.sidebar h2 {
+    color: var(--text-light);
     margin-bottom: 1.5rem;
     font-size: 1.4rem;
     text-align: center;
-    border-bottom: 2px solid var(--primary-yellow);
+    border-bottom: 2px solid var(--accent-dark);
     padding-bottom: 0.8rem;
 }
 
+/* Lecture list */
 .lecture-list {
     list-style: none;
+    margin-bottom: 2rem;
 }
 
 .lecture-item {
@@ -99,121 +171,79 @@ main {
 .lecture-link {
     display: block;
     padding: 1rem;
-    background: var(--light-yellow);
-    border: 1px solid var(--accent-yellow);
+    background: var(--secondary-dark);
+    border: 1px solid var(--border-dark);
     border-radius: 6px;
     text-decoration: none;
-    color: var(--text-dark);
+    color: var(--text-light);
     transition: all 0.3s ease;
     font-weight: 500;
+    font-size: 0.95rem;
 }
 
 .lecture-link:hover {
-    background: var(--primary-yellow);
+    background: var(--hover-dark);
+    border-color: var(--accent-dark);
     transform: translateX(5px);
-    box-shadow: 0 4px 12px var(--shadow);
 }
 
-.lecture-link.active {
-    background: var(--primary-yellow);
-    border-color: var(--dark-yellow);
-    font-weight: 600;
+/* Practical list */
+.practical-list {
+    list-style: none;
 }
 
-/* Content area */
-.content-area {
-    background: var(--white);
-    border-radius: 10px;
-    box-shadow: 0 4px 15px var(--shadow);
-    border: 2px solid var(--primary-yellow);
-    padding: 2rem;
-    min-height: 600px;
+.practical-item {
+    margin-bottom: 0.8rem;
 }
 
-/* Welcome card */
-.welcome-card {
-    background: var(--light-yellow);
-    border: 2px solid var(--accent-yellow);
-    border-radius: 10px;
-    padding: 2rem;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.welcome-card h2 {
-    color: var(--dark-yellow);
-    margin-bottom: 1rem;
-    font-size: 1.6rem;
-}
-
-.welcome-card p {
-    font-size: 1.05rem;
+.practical-link {
+    display: block;
+    padding: 1rem;
+    background: var(--secondary-dark);
+    border: 1px solid var(--border-dark);
+    border-radius: 6px;
+    text-decoration: none;
     color: var(--text-light);
-    line-height: 1.6;
-}
-
-/* Cards grid */
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-.card {
-    background: var(--white);
-    border: 2px solid var(--primary-yellow);
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 12px var(--shadow);
     transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.95rem;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
-}
-
-.card h3 {
-    color: var(--dark-yellow);
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-}
-
-.card p {
-    color: var(--text-light);
-    margin-bottom: 1.2rem;
-    line-height: 1.5;
+.practical-link:hover {
+    background: var(--hover-dark);
+    border-color: var(--accent-dark);
+    transform: translateX(5px);
 }
 
 /* Buttons */
 .btn {
     display: inline-block;
-    background: linear-gradient(135deg, var(--primary-yellow), var(--secondary-yellow));
-    color: var(--text-dark);
+    background: var(--accent-dark);
+    color: var(--text-light);
     padding: 0.8rem 1.5rem;
     text-decoration: none;
     border-radius: 6px;
-    font-weight: 600;
+    font-weight: 500;
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
     text-align: center;
+    border: 1px solid var(--border-dark);
 }
 
 .btn:hover {
-    background: linear-gradient(135deg, var(--secondary-yellow), var(--primary-yellow));
+    background: var(--hover-dark);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
 }
 
 /* Footer */
 footer {
-    background: var(--text-dark);
-    color: var(--white);
+    background: var(--primary-dark);
+    color: var(--text-lighter);
     text-align: center;
     padding: 1.5rem 0;
     margin-top: 3rem;
-    grid-column: 1 / -1;
+    border-top: 1px solid var(--border-dark);
 }
 
 footer p {
@@ -222,36 +252,37 @@ footer p {
 
 footer p:last-child {
     margin-bottom: 0;
-    opacity: 0.8;
 }
 
 /* Lecture content styles */
 .lecture-content {
-    background: var(--white);
+    background: var(--card-dark);
     padding: 2rem;
     border-radius: 8px;
+    border: 1px solid var(--border-dark);
     margin-bottom: 2rem;
+    box-shadow: 0 4px 6px var(--shadow-dark);
 }
 
 .lecture-content h1 {
-    color: var(--dark-yellow);
+    color: var(--text-light);
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
     text-align: center;
-    border-bottom: 2px solid var(--primary-yellow);
+    border-bottom: 2px solid var(--accent-dark);
     padding-bottom: 1rem;
 }
 
 .lecture-content h2 {
-    color: var(--dark-yellow);
+    color: var(--text-light);
     margin: 2rem 0 1rem 0;
     font-size: 1.5rem;
-    border-bottom: 1px solid var(--accent-yellow);
+    border-bottom: 1px solid var(--border-dark);
     padding-bottom: 0.5rem;
 }
 
 .lecture-content h3 {
-    color: #b8860b;
+    color: var(--text-lighter);
     margin: 1.5rem 0 1rem 0;
     font-size: 1.3rem;
 }
@@ -259,11 +290,13 @@ footer p:last-child {
 .lecture-content p {
     margin-bottom: 1rem;
     line-height: 1.6;
+    color: var(--text-lighter);
 }
 
 .lecture-content ul, .lecture-content ol {
     margin: 1rem 0;
     padding-left: 2rem;
+    color: var(--text-lighter);
 }
 
 .lecture-content li {
@@ -271,61 +304,47 @@ footer p:last-child {
     line-height: 1.5;
 }
 
+.lecture-content strong {
+    color: var(--text-light);
+}
+
 .back-btn {
     display: inline-flex;
     align-items: center;
-    background: var(--text-light);
-    color: var(--white);
+    background: var(--accent-dark);
+    color: var(--text-light);
     padding: 0.7rem 1.2rem;
     text-decoration: none;
     border-radius: 6px;
     margin-bottom: 1.5rem;
     transition: background 0.3s ease;
     font-weight: 500;
+    border: 1px solid var(--border-dark);
 }
 
 .back-btn:hover {
-    background: #555;
+    background: var(--hover-dark);
 }
 
 /* Question blocks */
 .questions-block {
-    background: var(--light-yellow);
+    background: var(--secondary-dark);
     padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid var(--primary-yellow);
+    border-radius: 6px;
+    border-left: 4px solid var(--accent-dark);
     margin: 1.5rem 0;
 }
 
 .questions-block h3 {
-    color: var(--dark-yellow);
+    color: var(--text-light);
     margin-bottom: 1rem;
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
-    .container {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    main {
-        grid-template-columns: 1fr;
-    }
-    
-    .lectures-sidebar {
-        position: static;
-        order: 2;
-    }
-    
-    .content-area {
-        order: 1;
-    }
-}
-
 @media (max-width: 768px) {
-    .cards-grid {
+    .content-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     header h1 {
@@ -334,5 +353,27 @@ footer p:last-child {
     
     .lecture-content {
         padding: 1.5rem;
+    }
+    
+    .welcome-section, .main-content, .sidebar {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    header {
+        padding: 1.5rem 0;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .lecture-content {
+        padding: 1.2rem;
     }
 }
