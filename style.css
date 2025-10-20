@@ -5,23 +5,23 @@
 }
 
 :root {
-    --primary-dark: #1a365d;
-    --secondary-dark: #2d3748;
-    --accent-dark: #4a5568;
-    --text-light: #e2e8f0;
-    --text-lighter: #a0aec0;
-    --background-dark: #0f1419;
-    --card-dark: #1e293b;
-    --border-dark: #374151;
-    --hover-dark: #2d3748;
-    --shadow-dark: rgba(0, 0, 0, 0.3);
+    --primary-yellow: #d4af37;
+    --secondary-yellow: #e6c34e;
+    --accent-yellow: #f0d675;
+    --dark-background: #1a1a1a;
+    --card-dark: #2d2d2d;
+    --border-dark: #404040;
+    --hover-yellow: #c19b2c;
+    --text-light: #f5f5f5;
+    --text-lighter: #cccccc;
+    --shadow-dark: rgba(0, 0, 0, 0.4);
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-light);
-    background: linear-gradient(135deg, var(--background-dark) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, var(--dark-background) 0%, #2d2d2d 100%);
     min-height: 100vh;
     font-size: 15px;
 }
@@ -34,8 +34,8 @@ body {
 
 /* Header */
 header {
-    background: var(--primary-dark);
-    color: var(--text-light);
+    background: var(--primary-yellow);
+    color: #2d2d2d;
     padding: 2rem 0;
     text-align: center;
     border-bottom: 1px solid var(--border-dark);
@@ -44,14 +44,15 @@ header {
 header h1 {
     font-size: 2.2rem;
     margin-bottom: 0.8rem;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 header p {
     font-size: 1.1rem;
-    color: var(--text-lighter);
+    color: #4d4d4d;
     max-width: 600px;
     margin: 0 auto;
+    font-weight: 500;
 }
 
 /* Main content */
@@ -70,10 +71,10 @@ main {
 }
 
 .welcome-section h2 {
-    color: var(--text-light);
+    color: var(--primary-yellow);
     margin-bottom: 1rem;
     font-size: 1.6rem;
-    border-bottom: 2px solid var(--accent-dark);
+    border-bottom: 2px solid var(--accent-yellow);
     padding-bottom: 0.5rem;
 }
 
@@ -100,10 +101,10 @@ main {
 }
 
 .main-content h2 {
-    color: var(--text-light);
+    color: var(--primary-yellow);
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
-    border-bottom: 2px solid var(--accent-dark);
+    border-bottom: 2px solid var(--accent-yellow);
     padding-bottom: 0.5rem;
 }
 
@@ -113,7 +114,7 @@ main {
 }
 
 .info-block h3 {
-    color: var(--text-light);
+    color: var(--primary-yellow);
     margin-bottom: 1rem;
     font-size: 1.3rem;
 }
@@ -133,10 +134,15 @@ main {
 
 .info-block li::before {
     content: '•';
-    color: var(--accent-dark);
+    color: var(--accent-yellow);
     font-weight: bold;
     position: absolute;
     left: 0.5rem;
+}
+
+.info-block strong {
+    color: var(--text-light);
+    font-weight: 600;
 }
 
 /* Sidebar */
@@ -150,11 +156,11 @@ main {
 }
 
 .sidebar h2 {
-    color: var(--text-light);
+    color: var(--primary-yellow);
     margin-bottom: 1.5rem;
     font-size: 1.4rem;
     text-align: center;
-    border-bottom: 2px solid var(--accent-dark);
+    border-bottom: 2px solid var(--accent-yellow);
     padding-bottom: 0.8rem;
 }
 
@@ -171,20 +177,21 @@ main {
 .lecture-link {
     display: block;
     padding: 1rem;
-    background: var(--secondary-dark);
+    background: #3d3d3d;
     border: 1px solid var(--border-dark);
     border-radius: 6px;
     text-decoration: none;
     color: var(--text-light);
     transition: all 0.3s ease;
-    font-weight: 500;
+    font-weight: 700; /* Жирный шрифт */
     font-size: 0.95rem;
 }
 
 .lecture-link:hover {
-    background: var(--hover-dark);
-    border-color: var(--accent-dark);
+    background: var(--hover-yellow);
+    border-color: var(--accent-yellow);
     transform: translateX(5px);
+    color: #2d2d2d;
 }
 
 /* Practical list */
@@ -199,46 +206,47 @@ main {
 .practical-link {
     display: block;
     padding: 1rem;
-    background: var(--secondary-dark);
+    background: #3d3d3d;
     border: 1px solid var(--border-dark);
     border-radius: 6px;
     text-decoration: none;
     color: var(--text-light);
     transition: all 0.3s ease;
-    font-weight: 500;
+    font-weight: 700; /* Жирный шрифт */
     font-size: 0.95rem;
 }
 
 .practical-link:hover {
-    background: var(--hover-dark);
-    border-color: var(--accent-dark);
+    background: var(--hover-yellow);
+    border-color: var(--accent-yellow);
     transform: translateX(5px);
+    color: #2d2d2d;
 }
 
 /* Buttons */
 .btn {
     display: inline-block;
-    background: var(--accent-dark);
-    color: var(--text-light);
+    background: var(--primary-yellow);
+    color: #2d2d2d;
     padding: 0.8rem 1.5rem;
     text-decoration: none;
     border-radius: 6px;
-    font-weight: 500;
+    font-weight: 600;
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
     text-align: center;
-    border: 1px solid var(--border-dark);
+    border: 1px solid var(--accent-yellow);
 }
 
 .btn:hover {
-    background: var(--hover-dark);
+    background: var(--hover-yellow);
     transform: translateY(-2px);
 }
 
 /* Footer */
 footer {
-    background: var(--primary-dark);
+    background: var(--card-dark);
     color: var(--text-lighter);
     text-align: center;
     padding: 1.5rem 0;
@@ -265,16 +273,16 @@ footer p:last-child {
 }
 
 .lecture-content h1 {
-    color: var(--text-light);
+    color: var(--primary-yellow);
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
     text-align: center;
-    border-bottom: 2px solid var(--accent-dark);
+    border-bottom: 2px solid var(--accent-yellow);
     padding-bottom: 1rem;
 }
 
 .lecture-content h2 {
-    color: var(--text-light);
+    color: var(--primary-yellow);
     margin: 2rem 0 1rem 0;
     font-size: 1.5rem;
     border-bottom: 1px solid var(--border-dark);
@@ -282,7 +290,7 @@ footer p:last-child {
 }
 
 .lecture-content h3 {
-    color: var(--text-lighter);
+    color: var(--accent-yellow);
     margin: 1.5rem 0 1rem 0;
     font-size: 1.3rem;
 }
@@ -306,37 +314,38 @@ footer p:last-child {
 
 .lecture-content strong {
     color: var(--text-light);
+    font-weight: 600;
 }
 
 .back-btn {
     display: inline-flex;
     align-items: center;
-    background: var(--accent-dark);
-    color: var(--text-light);
+    background: var(--primary-yellow);
+    color: #2d2d2d;
     padding: 0.7rem 1.2rem;
     text-decoration: none;
     border-radius: 6px;
     margin-bottom: 1.5rem;
     transition: background 0.3s ease;
-    font-weight: 500;
-    border: 1px solid var(--border-dark);
+    font-weight: 600;
+    border: 1px solid var(--accent-yellow);
 }
 
 .back-btn:hover {
-    background: var(--hover-dark);
+    background: var(--hover-yellow);
 }
 
 /* Question blocks */
 .questions-block {
-    background: var(--secondary-dark);
+    background: #3d3d3d;
     padding: 1.5rem;
     border-radius: 6px;
-    border-left: 4px solid var(--accent-dark);
+    border-left: 4px solid var(--primary-yellow);
     margin: 1.5rem 0;
 }
 
 .questions-block h3 {
-    color: var(--text-light);
+    color: var(--primary-yellow);
     margin-bottom: 1rem;
 }
 
@@ -375,5 +384,11 @@ footer p:last-child {
     
     .lecture-content {
         padding: 1.2rem;
+    }
+    
+    .lecture-link,
+    .practical-link {
+        padding: 0.8rem;
+        font-size: 0.9rem;
     }
 }
