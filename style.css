@@ -20,34 +20,39 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
-    background: linear-gradient(135deg, var(--light-yellow) 0%, var(--accent-yellow) 100%);
+    background-color: var(--light-yellow);
     min-height: 100vh;
+    font-size: 15px;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
 }
 
 /* Header */
 header {
     background: linear-gradient(135deg, var(--primary-yellow), var(--secondary-yellow));
     color: var(--text-dark);
-    padding: 2.5rem 0;
+    padding: 2rem 0;
     text-align: center;
     box-shadow: 0 4px 15px var(--shadow);
     border-bottom: 3px solid var(--dark-yellow);
+    grid-column: 1 / -1;
 }
 
 header h1 {
-    font-size: 2.8rem;
-    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
 header p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     opacity: 0.9;
     max-width: 600px;
     margin: 0 auto;
@@ -55,177 +60,150 @@ header p {
 
 /* Main content */
 main {
-    padding: 3rem 0;
+    padding: 2rem 0;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
 }
 
-section {
-    margin-bottom: 4rem;
+/* Sidebar - Лекции в столбик */
+.lectures-sidebar {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow);
+    border: 2px solid var(--primary-yellow);
+    padding: 1.5rem;
+    height: fit-content;
+    position: sticky;
+    top: 2rem;
 }
 
-h2 {
+.lectures-sidebar h2 {
     color: var(--dark-yellow);
-    margin-bottom: 2rem;
-    font-size: 2.2rem;
-    border-bottom: 3px solid var(--primary-yellow);
-    padding-bottom: 0.8rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
     text-align: center;
+    border-bottom: 2px solid var(--primary-yellow);
+    padding-bottom: 0.8rem;
+}
+
+.lecture-list {
+    list-style: none;
+}
+
+.lecture-item {
+    margin-bottom: 0.8rem;
+}
+
+.lecture-link {
+    display: block;
+    padding: 1rem;
+    background: var(--light-yellow);
+    border: 1px solid var(--accent-yellow);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.lecture-link:hover {
+    background: var(--primary-yellow);
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.lecture-link.active {
+    background: var(--primary-yellow);
+    border-color: var(--dark-yellow);
+    font-weight: 600;
+}
+
+/* Content area */
+.content-area {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow);
+    border: 2px solid var(--primary-yellow);
+    padding: 2rem;
+    min-height: 600px;
 }
 
 /* Welcome card */
 .welcome-card {
-    background: var(--white);
-    border: 3px solid var(--primary-yellow);
-    border-radius: 15px;
-    padding: 2.5rem;
+    background: var(--light-yellow);
+    border: 2px solid var(--accent-yellow);
+    border-radius: 10px;
+    padding: 2rem;
     text-align: center;
-    box-shadow: 0 8px 25px var(--shadow);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .welcome-card h2 {
     color: var(--dark-yellow);
-    border: none;
-    font-size: 2rem;
     margin-bottom: 1rem;
+    font-size: 1.6rem;
 }
 
 .welcome-card p {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--text-light);
-    line-height: 1.8;
+    line-height: 1.6;
 }
 
 /* Cards grid */
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
 }
 
 .card {
     background: var(--white);
     border: 2px solid var(--primary-yellow);
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 6px 20px var(--shadow);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px var(--shadow);
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary-yellow), var(--secondary-yellow));
 }
 
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(255, 215, 0, 0.35);
-}
-
-.card-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    text-align: center;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
 }
 
 .card h3 {
     color: var(--dark-yellow);
     margin-bottom: 1rem;
-    font-size: 1.4rem;
-    text-align: center;
+    font-size: 1.2rem;
 }
 
 .card p {
     color: var(--text-light);
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-    text-align: center;
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
 }
 
 /* Buttons */
 .btn {
-    display: block;
+    display: inline-block;
     background: linear-gradient(135deg, var(--primary-yellow), var(--secondary-yellow));
     color: var(--text-dark);
-    padding: 1rem 2rem;
+    padding: 0.8rem 1.5rem;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 6px;
     font-weight: 600;
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
     text-align: center;
-    font-size: 1rem;
-    margin-top: auto;
 }
 
 .btn:hover {
     background: linear-gradient(135deg, var(--secondary-yellow), var(--primary-yellow));
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
-}
-
-/* Resources section */
-.resources-section {
-    background: var(--white);
-    padding: 2.5rem;
-    border-radius: 15px;
-    border: 3px solid var(--primary-yellow);
-    box-shadow: 0 6px 20px var(--shadow);
-}
-
-.resources-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-.resource-card {
-    background: var(--light-yellow);
-    padding: 1.5rem;
-    border-radius: 10px;
-    border: 2px solid var(--accent-yellow);
-}
-
-.resource-card h3 {
-    color: var(--dark-yellow);
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-}
-
-.resource-card ul {
-    list-style: none;
-}
-
-.resource-card li {
-    margin-bottom: 0.8rem;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.resource-card li::before {
-    content: '•';
-    color: var(--primary-yellow);
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-}
-
-.resource-card a {
-    color: var(--text-dark);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.resource-card a:hover {
-    color: var(--dark-yellow);
-    text-decoration: underline;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
 }
 
 /* Footer */
@@ -233,8 +211,9 @@ footer {
     background: var(--text-dark);
     color: var(--white);
     text-align: center;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     margin-top: 3rem;
+    grid-column: 1 / -1;
 }
 
 footer p {
@@ -244,67 +223,52 @@ footer p {
 footer p:last-child {
     margin-bottom: 0;
     opacity: 0.8;
-    font-size: 0.9rem;
 }
 
 /* Lecture content styles */
 .lecture-content {
     background: var(--white);
-    padding: 2.5rem;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px var(--shadow);
+    padding: 2rem;
+    border-radius: 8px;
     margin-bottom: 2rem;
-    border: 2px solid var(--primary-yellow);
 }
 
 .lecture-content h1 {
     color: var(--dark-yellow);
     margin-bottom: 1.5rem;
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     text-align: center;
-    border-bottom: 3px solid var(--primary-yellow);
+    border-bottom: 2px solid var(--primary-yellow);
     padding-bottom: 1rem;
 }
 
 .lecture-content h2 {
     color: var(--dark-yellow);
     margin: 2rem 0 1rem 0;
-    font-size: 1.8rem;
-    text-align: left;
-    border-bottom: 2px solid var(--accent-yellow);
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--accent-yellow);
     padding-bottom: 0.5rem;
 }
 
 .lecture-content h3 {
     color: #b8860b;
     margin: 1.5rem 0 1rem 0;
-    font-size: 1.4rem;
-}
-
-.lecture-content h4 {
-    color: #daa520;
-    margin: 1.2rem 0 0.8rem 0;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 .lecture-content p {
-    margin-bottom: 1.2rem;
-    line-height: 1.7;
-    text-align: justify;
-}
-
-.lecture-content ul, .lecture-content ol {
-    margin: 1.2rem 0;
-    padding-left: 2.5rem;
-}
-
-.lecture-content li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
     line-height: 1.6;
 }
 
-.lecture-content strong {
-    color: var(--dark-yellow);
+.lecture-content ul, .lecture-content ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.lecture-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
 }
 
 .back-btn {
@@ -312,26 +276,25 @@ footer p:last-child {
     align-items: center;
     background: var(--text-light);
     color: var(--white);
-    padding: 0.8rem 1.5rem;
+    padding: 0.7rem 1.2rem;
     text-decoration: none;
-    border-radius: 8px;
-    margin-bottom: 2rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
     transition: background 0.3s ease;
     font-weight: 500;
 }
 
 .back-btn:hover {
     background: #555;
-    transform: translateX(-5px);
 }
 
 /* Question blocks */
 .questions-block {
     background: var(--light-yellow);
-    padding: 2rem;
-    border-radius: 10px;
+    padding: 1.5rem;
+    border-radius: 8px;
     border-left: 4px solid var(--primary-yellow);
-    margin: 2rem 0;
+    margin: 1.5rem 0;
 }
 
 .questions-block h3 {
@@ -340,46 +303,36 @@ footer p:last-child {
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    main {
+        grid-template-columns: 1fr;
+    }
+    
+    .lectures-sidebar {
+        position: static;
+        order: 2;
+    }
+    
+    .content-area {
+        order: 1;
+    }
+}
+
 @media (max-width: 768px) {
     .cards-grid {
         grid-template-columns: 1fr;
     }
     
     header h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .lecture-content {
         padding: 1.5rem;
-    }
-    
-    h2 {
-        font-size: 1.8rem;
-    }
-    
-    .welcome-card {
-        padding: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 15px;
-    }
-    
-    header {
-        padding: 2rem 0;
-    }
-    
-    header h1 {
-        font-size: 1.8rem;
-    }
-    
-    .card {
-        padding: 1.5rem;
-    }
-    
-    .lecture-content {
-        padding: 1rem;
     }
 }
