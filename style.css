@@ -1,17 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background: antiquewhite;
     width: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #1e88e5, #0d47a1);
+    color: white;
+    padding: 20px 10px;
+    border-radius: 10px;
+    margin: 20px auto 30px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 90%;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Main content */
+main {
+    padding: 2rem 0;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    color: #0d47a1;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    text-align: center;
+    border-bottom: 2px solid #1e88e5;
+    padding-bottom: 0.5rem;
+}
+
+/* Welcome card */
+.welcome-card {
+    background: azure;
+    border: 2px solid #1e88e5;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-card h2 {
+    color: #0d47a1;
+    border: none;
+    font-size: 1.8rem;
+}
+
+/* Cards grid */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background: azure;
+    border: 2px solid #1e88e5;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.card h3 {
+    color: #0d47a1;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.card p {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Buttons */
+.btn {
+    display: block;
+    background: linear-gradient(135deg, #1e88e5, #0d47a1);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #0d47a1, #1e88e5);
+}
+
+/* Info section */
+.info-section {
+    background: azure;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 2px solid #1e88e5;
 }
 
 .cont {
     display: flex;
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 20px;
+    width: 100%;
+    gap: 2rem;
 }
 
 .item1 {
@@ -23,67 +151,112 @@ body {
     flex: 4;
 }
 
-div {
+.item1, .item2 {
     margin: 5px;
     padding: 15px;
-    background: azure;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-h1 {
-    text-align: center;
-    width: 100%;
-}
-
-header {
-    background: linear-gradient(135deg, #1e88e5, #0d47a1);
-    color: white;
-    padding: 20px 10px;
-    border-radius: 10px;
-    margin: 20px auto;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-    text-align: center;
-    width: 90%;
-    max-width: 1200px;
-}
-
-ol, ul {
-    background: lavenderblush;
-    padding: 15px 15px 15px 35px;
-    margin: 10px 0;
+    background: white;
     border-radius: 5px;
 }
 
-li {
-    margin: 8px 0;
-    line-height: 1.4;
+.item1 ol {
+    padding-left: 1.5rem;
 }
 
-a {
+.item1 li {
+    margin-bottom: 0.5rem;
+}
+
+.item1 a {
     color: #1e88e5;
     text-decoration: none;
-    transition: color 0.3s;
 }
 
-a:hover {
-    color: #0d47a1;
+.item1 a:hover {
     text-decoration: underline;
 }
 
-span {
-    color: blue;
-    font-size: larger;
+.item2 h4 {
+    color: #0d47a1;
+    margin: 1rem 0 0.5rem 0;
 }
 
-/* Адаптивность для мобильных устройств */
+.item2 ul {
+    padding-left: 1.5rem;
+}
+
+.item2 li {
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* Lecture content styles */
+.lecture-content {
+    background: azure;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    border: 2px solid #1e88e5;
+}
+
+.lecture-content h1 {
+    color: #0d47a1;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.lecture-content h2 {
+    color: #0d47a1;
+    margin: 1.5rem 0 1rem 0;
+    text-align: left;
+    border-bottom: 1px solid #1e88e5;
+}
+
+.lecture-content h3 {
+    color: #1e88e5;
+    margin: 1.2rem 0 0.8rem 0;
+}
+
+.back-btn {
+    display: inline-block;
+    background: #666;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+
+.back-btn:hover {
+    background: #555;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-    .cont {
-        flex-direction: column;
-        width: 95%;
+    .cards-grid {
+        grid-template-columns: 1fr;
     }
     
-    .item1, .item2 {
-        width: 100%;
+    .cont {
+        flex-direction: column;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .lecture-content {
+        padding: 1rem;
     }
 }
