@@ -4,21 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Лекция 3 - Языки взаимодействия с ОС</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Лекция 3: Языки взаимодействия с ОС. Программные интерфейсы</h1>
-            <p>Понятие программного интерфейса, его назначение. Виды интерфейсов.</p>
-        </div>
+        <h1>Лекция 3: Языки взаимодействия с ОС. Программные интерфейсы</h1>
     </header>
 
-    <main class="container">
-        <a href="../index.html" class="back-btn">← Назад к списку лекций</a>
+    <div class="cont">
+        <div class="item1">
+            <a href="/mdk0501/index.html" class="back-btn">← Назад к списку лекций</a>
+            <h3>Быстрая навигация:</h3>
+            <ul>
+                <li><a href="#text-interfaces">Текстовые интерфейсы</a></li>
+                <li><a href="#gui">Графические интерфейсы</a></li>
+                <li><a href="#voice">Голосовые интерфейсы</a></li>
+                <li><a href="#api">Программные интерфейсы</a></li>
+                <li><a href="#questions">Контрольные вопросы</a></li>
+            </ul>
+        </div>
         
-        <div class="lecture-content">
-            <h2>Языки взаимодействия пользователя с ОС</h2>
+        <div class="item2">
+            <h2 id="text-interfaces">Языки взаимодействия пользователя с ОС</h2>
             
             <h3>Текстовые интерфейсы</h3>
             <p>Текстовые интерфейсы, или командные строки, предполагают ввод команд в текстовом формате.</p>
@@ -27,7 +34,7 @@
                 <li><strong>Windows:</strong> командная строка (cmd) с командами dir, cd, copy и др.</li>
             </ul>
             
-            <h3>Графические интерфейсы (GUI)</h3>
+            <h3 id="gui">Графические интерфейсы (GUI)</h3>
             <p>Графический пользовательский интерфейс представляет собой взаимодействие с ОС через визуальные элементы.</p>
             <ul>
                 <li><strong>Windows:</strong> рабочий стол, панель задач, меню "Пуск"</li>
@@ -35,22 +42,22 @@
                 <li><strong>Linux:</strong> GNOME, KDE, Xfce</li>
             </ul>
             
-            <h3>Голосовые интерфейсы</h3>
+            <h3 id="voice">Голосовые интерфейсы</h3>
             <p>Голосовые интерфейсы позволяют давать команды ОС с помощью речи.</p>
             <ul>
-                <li>Siri (Apple)</li>
-                <li>Google Assistant (Android)</li>
-                <li>Cortana (Windows)</li>
+                <li><strong>Siri</strong> (Apple)</li>
+                <li><strong>Google Assistant</strong> (Android)</li>
+                <li><strong>Cortana</strong> (Windows)</li>
             </ul>
             
-            <h2>Программный интерфейс (API)</h2>
+            <h2 id="api">Программный интерфейс (API)</h2>
             <p><strong>API (Application Programming Interface)</strong> — это набор средств и протоколов, который позволяет программному обеспечению взаимодействовать с операционной системой или другими программами.</p>
             
             <h3>Что включает API:</h3>
             <ul>
-                <li>Функции или методы, предоставляемые ОС</li>
-                <li>Описание вызова этих функций</li>
-                <li>Формат данных, который ожидает система</li>
+                <li><strong>Функции или методы</strong>, предоставляемые ОС</li>
+                <li><strong>Описание вызова</strong> этих функций</li>
+                <li><strong>Формат данных</strong>, который ожидает система</li>
             </ul>
             
             <h2>Виды интерфейсов</h2>
@@ -61,7 +68,7 @@
                 <li><strong>Сетевой интерфейс</strong> - для обмена данными по сети</li>
             </ul>
             
-            <h2>Контрольные вопросы:</h2>
+            <h2 id="questions">Контрольные вопросы:</h2>
             <ol>
                 <li>Чем отличаются текстовые и графические интерфейсы взаимодействия с ОС?</li>
                 <li>Что такое API и какое его назначение в программировании?</li>
@@ -70,12 +77,6 @@
                 <li>Что такое голосовые интерфейсы и где они применяются?</li>
             </ol>
         </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Курс по операционным системам</p>
-        </div>
-    </footer>
+    </div>
 </body>
 </html>
