@@ -1,57 +1,89 @@
-body{
-    background: #8B8000; /* Темно-желтый фон */
+body {
+    background: antiquewhite;
     width: 100%;
-    font-weight: 600; /* Полужирный шрифт */
-    color: #2F2F2F; /* Темно-серый цвет текста */
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
 }
 
-.cont{
-    display: flex; 
-    width: 80%;
+.cont {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
+    gap: 20px;
 }
 
-div{
+.item1 {
+    flex: 1;
+    min-width: 250px;
+}
+
+.item2 {
+    flex: 4;
+}
+
+div {
     margin: 5px;
     padding: 15px;
-    background: #D4AF37; /* Золотистый цвет для блоков */
-    border: 1px solid #B8860B; /* Темная граница */
-    border-radius: 0; /* Убраны скругления для строгости */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: azure;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-h1{
+h1 {
+    text-align: center;
+    width: 100%;
+}
+
+header {
+    background: linear-gradient(135deg, #1e88e5, #0d47a1);
+    color: white;
+    padding: 20px 10px;
+    border-radius: 10px;
+    margin: 20px auto;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
     text-align: center;
     width: 90%;
-    color: #2F2F2F;
-    font-weight: 700;
-    margin: 20px auto;
-    padding: 10px;
-    border-bottom: 2px solid #B8860B;
+    max-width: 1200px;
 }
 
 ol, ul {
-    padding-left: 20px;
+    background: lavenderblush;
+    padding: 15px 15px 15px 35px;
+    margin: 10px 0;
+    border-radius: 5px;
 }
 
 li {
-    margin-bottom: 8px;
+    margin: 8px 0;
     line-height: 1.4;
 }
 
 a {
-    color: #2F2F2F;
+    color: #1e88e5;
     text-decoration: none;
-    font-weight: 600;
+    transition: color 0.3s;
 }
 
 a:hover {
+    color: #0d47a1;
     text-decoration: underline;
-    color: #000000;
 }
 
-p {
-    line-height: 1.6;
-    margin-bottom: 15px;
+span {
+    color: blue;
+    font-size: larger;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .cont {
+        flex-direction: column;
+        width: 95%;
+    }
+    
+    .item1, .item2 {
+        width: 100%;
+    }
 }
